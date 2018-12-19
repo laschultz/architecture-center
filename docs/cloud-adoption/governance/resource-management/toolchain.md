@@ -33,12 +33,23 @@ Unlike the cloud-agnostic position throughout Fusion, this article is Azure spec
 | Apply automated remediation                  | No  | No  | No  | Yes | No  |
 | Manage billing                               | Yes | No  | No  | No  | No  |
 
-When planning your deployment, you will need to consider where logging data is stored and how you integrate cloud-based [reporting and monitoring services](https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/infrastructure/logs-and-reporting/overview?branch=brian%2FCOMIntegration) with your existing processes and tools. 
+Along with these resource management tools and features, you will need to [monitor your deployed resources](../monitoring-enforcement/overview.md) for performance and health issues. [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) is the default monitoring and reporting solution in Azure. Azure Monitor provides a number of individual features that you can use to monitor your cloud resources, and the following list shows which feature allows you to address common monitoring requirements.
 
-Along with these resource management tools and features, you will need to [monitor your deployed resources](../monitoring-enforcement/overview.md) for performance and health issues. [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) is the default monitoring and reporting solution in Azure. 
+|                                                    | [Azure Portal](https://azure.microsoft.com/en-us/features/azure-portal/) | [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview) | [Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview) | [Azure Monitor Rest API](https://docs.microsoft.com/en-us/rest/api/monitor/) |
+|----------------------------------------------------|--------------|----------------------|---------------|------------------------|
+| Log virtual machine telemetry data                 | No           | No                   | Yes           | No                     |
+| Log virtual networking telemetry data              | No           | No                   | Yes           | No                     |
+| Log PaaS services telemetry data                   | No           | No                   | Yes           | No                     |
+| Log application telemetry data                     | No           | Yes                  | No            | No                     |
+| Configure reports and alerts                       | Yes          | No                   | No            | Yes                    |
+| Schedule regular reports or custom analysis        | No           | No                   | No            | No                     |
+| Visualize and analyze log and performance data     | Yes          | No                   | No            | No                     |
+| Integrate with on-premises or third-party monitoring solution     | No           | No                   | No            | Yes                    |
 
-|Note:
-|Organizations also use third-party DevOps tools to monitor workloads and resources. For more information, see [DevOps Tool Integrations](https://azure.microsoft.com/en-us/products/devops-tool-integrations/).
+When planning your deployment, you will need to consider where logging data is stored and how you integrate cloud-based [reporting and monitoring services](../../infrastructure/logs-and-reporting/overview) with your existing processes and tools. 
+
+> [!Note]
+> Organizations also use third-party DevOps tools to monitor workloads and resources. For more information, see [DevOps Tool Integrations](https://azure.microsoft.com/en-us/products/devops-tool-integrations/).
 
 
 # Next steps
